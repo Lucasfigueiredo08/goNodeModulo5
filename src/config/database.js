@@ -1,4 +1,6 @@
-require('dotenv');
+require('dotenv').config({
+    path: process.env.NODE_ENV === 'test' ? '.env.test': '.env'
+})
 
 module.exports = {
     username:process.env.DB_USER,
@@ -6,6 +8,7 @@ module.exports = {
     database: process.env.DB_NAME,
     host: process.env.DB_HOST,
     dialect: process.env.DB_DIALECT || "postgres",
+    storage: './__tests__/database.sqlite', // arquivo que salva as informações do banco
     operatorsAliases: false, //parar de dar erro no inicio da aplicação
     define: {
         timestamps: true,

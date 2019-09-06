@@ -1,7 +1,15 @@
 const routes = require('express').Router();
 
-routes.get('/', (req, res) => {
-    res.send('hello')
-})
+const { User } = require('./app/models/User');
 
-module.exports = routes
+routes.get('/', async (req, res) => {
+    const user = await User.create({
+        user: "Lucas",
+        email: "lukas@gmail.com",
+        password_hash: "123123"
+    });
+
+    return res.json(user);
+});
+
+module.exports = routes;
