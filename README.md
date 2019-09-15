@@ -11,3 +11,6 @@ yarn add supertest -D
 
 comandos aula 05
 yarn test - comando no package.json
+
+comando aula 06
+yarn add bcrypt
