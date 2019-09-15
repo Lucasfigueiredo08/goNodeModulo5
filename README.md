@@ -8,3 +8,6 @@ yarn sequelize migration:create --name=create-users // criar migration com a lib
 
 comandos aula 04
 yarn add supertest -D 
+
+comandos aula 05
+yarn test - comando no package.json
