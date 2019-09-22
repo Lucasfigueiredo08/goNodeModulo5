@@ -17,3 +17,5 @@ yarn add bcrypt
 
 comando aula 07
 yarn add jsonwebtoken
+
+comando aula 08

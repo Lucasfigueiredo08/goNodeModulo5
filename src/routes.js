@@ -1,20 +1,13 @@
 const routes = require('express').Router();
 
-// const { User } = require('./app/models/User');
-
-// routes.get('/', async (req, res) => {
-//     const user = await User.create({
-//         user: "Lucas",
-//         email: "lukas@gmail.com",
-//         password_hash: "123123"
-//     });
-
-//     return res.json(user);
-// });
-
 const SessionController = require("./app/controllers/SessionController");
 
+const authMiddleware = require('./app/middlewares/auth');
+
 routes.post("/sessions", SessionController.store);
+
+//todas as rotas abaixo utilizando o middleware
+routes.use(authMiddleware);
 
 routes.get("/dashboard", (req, res) => {
     return res.status(200).send();
