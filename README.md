@@ -14,3 +14,6 @@ yarn test - comando no package.json
 
 comando aula 06
 yarn add bcrypt
+
+comando aula 07
+yarn add jsonwebtoken
