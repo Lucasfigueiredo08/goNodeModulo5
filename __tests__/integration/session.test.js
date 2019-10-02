@@ -2,7 +2,7 @@ const request = require('supertest')
 
 const app = require('../../src/app')
 const truncate = require("../utils/truncate")
-const  { User } = require('../../src/app/models')
+const  factory = require('../factories')
  
 describe('Authentication', () => {
   beforeEach( async () => { //antes de cada um dos testes
@@ -38,9 +38,7 @@ describe('Authentication', () => {
 
     // verificar se tem token
     it("should return jwt token when authenticated", async () => {
-      const user = await User.create({
-        name: "Diego",
-        email: "diego@rocketseat.com.br",
+      const user = await factory.create("User" ,{
         password: "123123"
       });
 
@@ -55,10 +53,8 @@ describe('Authentication', () => {
     })
 
     it("should be able to access private routes when authenticated", async () => {
-      const user = await User.create({
-        name: "Diego",
-        email: "diego@rocketseat.com.br",
-        password: "123123"
+      const user = await factory.create('User', {
+        password: '123123'
       });
 
       const response = await request(app)

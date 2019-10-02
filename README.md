@@ -19,3 +19,7 @@ comando aula 07
 yarn add jsonwebtoken
 
 comando aula 08
+
+comando aula 09
+yarn add factory-girl -D    
+yarn add faker // gera dados aleatorios
