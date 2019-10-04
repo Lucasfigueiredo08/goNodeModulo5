@@ -23,3 +23,6 @@ comando aula 08
 comando aula 09
 yarn add factory-girl -D    
 yarn add faker // gera dados aleatorios
+
+comando aula 10
+yarn add nodemailer
